@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>idol-map — 御当地アイドルを地方×年代で</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>idol-map</h1>
+      <p>日本の御当地アイドルを <b>地方</b> × <b>年代</b> で選んで音楽へアクセス</p>
+    </header>
+
+    <main class="layout">
+      <section class="map-panel">
+        <h2>地方を選ぶ</h2>
+        <div class="map" id="map"></div>
+      </section>
+
+      <section class="time-panel">
+        <h2>年代を選ぶ</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="exhibit-panel">
+        <h2>この時代のアイドル民俗学 <span class="hint" id="exhibitHint"></span></h2>
+        <div class="exhibit" id="exhibit"></div>
+      </section>
+    </main>
+
+    <footer class="nowbar" id="nowbar">
+      <div class="now-meta">
+        <span class="now-region" id="nowRegion">地方を選択</span>
+        <span class="now-decade" id="nowDecade">年代を選択</span>
+      </div>
+      <button class="play" id="playBtn" disabled>▶ この地域の御当地アイドルを再生</button>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
