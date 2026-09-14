@@ -1,47 +1,24 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Idol Group Meta Map</title>
 <style>
-:root{--bg:#f7f7f4;--fg:#171717;--muted:#777;--line:#d8d8d2;--card:#fff;--accent:#111}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
-main{max-width:1180px;margin:auto;padding:32px 24px 48px}h1{margin:0 0 6px;font-size:28px}.sub{color:var(--muted);margin-bottom:24px}
-.map{position:relative;height:650px;background:var(--card);border:1px solid var(--line);overflow:hidden}
-.axis-x,.axis-y{position:absolute;background:var(--line)}.axis-x{left:8%;right:5%;top:50%;height:1px}.axis-y{top:6%;bottom:10%;left:50%;width:1px}
-.xl,.xr,.yt,.yb{position:absolute;color:var(--muted);font-size:13px}.xl{left:8%;bottom:4%}.xr{right:5%;bottom:4%}.yt{left:calc(50% + 12px);top:6%}.yb{left:calc(50% + 12px);bottom:10%}
-.points{position:absolute;inset:6% 5% 10% 8%}.point{position:absolute;transform:translate(-50%,-50%);cursor:pointer}.dot{width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid white;box-shadow:0 1px 5px #999}.label{position:absolute;top:23px;left:50%;transform:translateX(-50%);white-space:nowrap;font-weight:700;font-size:14px}.tip{position:absolute;display:none;z-index:5;left:50%;bottom:32px;transform:translateX(-50%);width:245px;padding:12px;background:#111;color:#fff;border-radius:8px;font-size:12px;line-height:1.55}.point:hover .tip{display:block}
-.legend{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--card);border:1px solid var(--line);padding:14px}.card h2{font-size:16px;margin:0 0 7px}.card p{margin:3px 0;color:#555;font-size:13px}.score{font-variant-numeric:tabular-nums;color:#111;font-weight:700}.method{margin-top:20px;color:var(--muted);font-size:12px;line-height:1.6}
-@media(max-width:800px){.map{height:560px}.legend{grid-template-columns:1fr 1fr}}@media(max-width:520px){main{padding:20px 12px}.map{height:500px}.legend{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<main>
-<h1>Idol Group Meta Map</h1>
-<div class="sub">SEED metadata → 2 meta axes → 4 groups</div>
-<div class="map" id="map">
-  <div class="axis-x"></div><div class="axis-y"></div>
-  <span class="xl">音楽中心</span><span class="xr">総合エンタメ</span>
-  <span class="yt">単一表現</span><span class="yb">複合表現</span>
-  <div class="points" id="points"></div>
-</div>
+:root{--bg:#f7f7f4;--fg:#171717;--muted:#777;--line:#d8d8d2;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}main{max-width:1180px;margin:auto;padding:32px 24px 48px}h1{margin:0 0 6px;font-size:28px}.sub{color:var(--muted);margin-bottom:24px}.map{position:relative;height:650px;background:var(--card);border:1px solid var(--line);overflow:hidden}.axis-x,.axis-y{position:absolute;background:var(--line)}.axis-x{left:8%;right:5%;top:50%;height:1px}.axis-y{top:6%;bottom:10%;left:50%;width:1px}.xl,.xr,.yt,.yb{position:absolute;color:var(--muted);font-size:13px}.xl{left:8%;bottom:4%}.xr{right:5%;bottom:4%}.yt{left:calc(50% + 12px);top:6%}.yb{left:calc(50% + 12px);bottom:10%}.points{position:absolute;inset:6% 5% 10% 8%}.point{position:absolute;transform:translate(-50%,-50%);cursor:pointer}.dot{width:18px;height:18px;border-radius:50%;background:#111;border:3px solid white;box-shadow:0 1px 5px #999}.label{position:absolute;top:23px;left:50%;transform:translateX(-50%);white-space:nowrap;font-weight:700;font-size:14px}.tip{position:absolute;display:none;z-index:5;left:50%;bottom:32px;transform:translateX(-50%);width:255px;padding:12px;background:#111;color:#fff;border-radius:8px;font-size:12px;line-height:1.55}.point:hover .tip{display:block}.legend{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--card);border:1px solid var(--line);padding:14px}.card h2{font-size:16px;margin:0 0 7px}.card p{margin:3px 0;color:#555;font-size:13px}.score{font-variant-numeric:tabular-nums;color:#111;font-weight:700}.method{margin-top:20px;color:var(--muted);font-size:12px;line-height:1.6}@media(max-width:800px){.map{height:560px}.legend{grid-template-columns:1fr 1fr}}@media(max-width:520px){main{padding:20px 12px}.map{height:500px}.legend{grid-template-columns:1fr}}
+</style></head>
+<body><main>
+<h1>Idol Group Meta Map</h1><div class="sub">SEED metadata → 2 meta axes → 惑星通信社 / エルナン / はいどーも！テラスマです！ / XG</div>
+<div class="map"><div class="axis-x"></div><div class="axis-y"></div><span class="xl">音楽中心</span><span class="xr">総合エンタメ</span><span class="yt">単一表現</span><span class="yb">複合表現</span><div class="points" id="points"></div></div>
 <div class="legend" id="legend"></div>
-<div class="method"><b>配置ルール</b>：X軸は metadata の style / media から「音楽中心→総合エンタメ」を、Y軸は style / media の異種活動数から「単一表現→複合表現」を導出。値は0–1に正規化し、推測した市場規模や人気順位は使わない。現在の4組を比較するための初期メタ軸で、後から特徴量を追加して再計算できる。</div>
-</main>
-<script>
+<div class="method"><b>配置ルール</b>：X軸は metadata の表現・媒体の広がりから「音楽中心→総合エンタメ」、Y軸は活動媒体・表現形式の複合度から「単一表現→複合表現」。値は比較用の初期正規化値で、人気順位や市場規模は推測していない。次段階では4組のSEED metadataから特徴量を機械的に算出する。</div>
+</main><script>
 const groups=[
- {name:'はいどーも！テラスマです！',organization:'株式会社Rinks（テラスマ運営）',base:'東京',style:'アイドル×お笑い',media:['ライブ','お笑い','配信'],status:'active',x:.82,y:.92},
- {name:'CUTIE STREET',organization:'ASOBISYSTEM',base:'東京',style:'KAWAII LAB.／原宿発',media:['ライブ','音楽','メディア'],status:'active',x:.66,y:.72},
- {name:'×純文学少女歌劇団',organization:'Principal J.C.A',base:'東京',style:'ミュージカル×アイドル／物語IP',media:['舞台','ライブ','物語展開'],status:'active',x:.78,y:.96},
- {name:'CYNHN',organization:'DEARSTAGE',base:'東京',style:'青色世界観／楽曲派',media:['音楽','ライブ','配信'],status:'active',x:.38,y:.67}
+ {name:'惑星通信社',organization:'メディア／情報発信主体',style:'アイドル・人物・活動を横断して扱う',media:['メディア','記事','人物','活動'],x:.72,y:.91,why:'情報・人物・活動を横断するメディア型。単一の音楽表現よりも情報空間の複合度が高い。'},
+ {name:'エルナン',organization:'アイドルグループ',style:'グループ活動・ライブ／音楽を中心に展開',media:['音楽','ライブ','グループ活動'],x:.48,y:.58,why:'音楽・ライブを中心とするグループ型。比較軸上では中間寄りに配置。'},
+ {name:'はいどーも！テラスマです！',organization:'アイドル×お笑い',style:'アイドル×お笑い',media:['ライブ','お笑い','配信','コメディ'],x:.84,y:.94,why:'音楽以外のお笑い・コメディを強く含むため、総合エンタメ側かつ複合表現側。'},
+ {name:'XG',organization:'XGALX',style:'HIP HOP／R&B／グローバルポップ',media:['音楽','ダンス','MV','SNS','グローバル展開'],x:.67,y:.72,why:'音楽を核にしつつ、映像・ダンス・SNS・グローバル媒体へ展開するため中〜高の複合度。'}
 ];
 const points=document.getElementById('points'),legend=document.getElementById('legend');
-groups.forEach(g=>{
- const p=document.createElement('div');p.className='point';p.style.left=(g.x*100)+'%';p.style.top=((1-g.y)*100)+'%';
- p.innerHTML=`<div class="dot"></div><div class="label">${g.name}</div><div class="tip"><b>${g.name}</b><br>組織：${g.organization}<br>拠点：${g.base}<br>style：${g.style}<br>media：${g.media.join(' / ')}<br>status：${g.status}<br>X=${g.x.toFixed(2)} / Y=${g.y.toFixed(2)}</div>`;points.appendChild(p);
- const c=document.createElement('div');c.className='card';c.innerHTML=`<h2>${g.name}</h2><p>${g.organization}</p><p>${g.base} · ${g.style}</p><p>${g.media.join(' / ')}</p><p>X <span class="score">${g.x.toFixed(2)}</span>　Y <span class="score">${g.y.toFixed(2)}</span></p>`;legend.appendChild(c);
-});
-</script>
-</body>
-</html>
+groups.forEach(g=>{const p=document.createElement('div');p.className='point';p.style.left=g.x*100+'%';p.style.top=(1-g.y)*100+'%';p.innerHTML=`<div class="dot"></div><div class="label">${g.name}</div><div class="tip"><b>${g.name}</b><br>組織：${g.organization}<br>style：${g.style}<br>media：${g.media.join(' / ')}<br>${g.why}<br><br>X=${g.x.toFixed(2)} / Y=${g.y.toFixed(2)}</div>`;points.appendChild(p);const c=document.createElement('div');c.className='card';c.innerHTML=`<h2>${g.name}</h2><p>${g.organization}</p><p>${g.style}</p><p>${g.media.join(' / ')}</p><p>X <span class="score">${g.x.toFixed(2)}</span>　Y <span class="score">${g.y.toFixed(2)}</span></p>`;legend.appendChild(c)});
+</script></body></html>
