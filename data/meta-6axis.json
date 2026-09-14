@@ -1,0 +1,56 @@
+{
+  "meta_axes": {
+    "music": "音楽中心度",
+    "live": "ライブ／現場活動度",
+    "media": "メディア展開度",
+    "concept": "コンセプト／物語性",
+    "network": "他主体との接続性",
+    "expression": "表現形式の多様性"
+  },
+  "subjects": [
+    {
+      "name": "はいどーも！テラスマです！",
+      "scores": {
+        "music": 0.45,
+        "live": 0.90,
+        "media": 0.65,
+        "concept": 0.80,
+        "network": 0.75,
+        "expression": 0.95
+      }
+    },
+    {
+      "name": "惑星通信社",
+      "scores": {
+        "music": 0.70,
+        "live": 0.90,
+        "media": 0.40,
+        "concept": 0.90,
+        "network": 0.95,
+        "expression": 0.70
+      }
+    },
+    {
+      "name": "エルナン",
+      "scores": {
+        "music": 0.75,
+        "live": 0.80,
+        "media": 0.45,
+        "concept": 0.65,
+        "network": 0.55,
+        "expression": 0.60
+      }
+    },
+    {
+      "name": "XG",
+      "scores": {
+        "music": 0.95,
+        "live": 0.80,
+        "media": 0.95,
+        "concept": 0.90,
+        "network": 0.90,
+        "expression": 0.95
+      }
+    }
+  ]
+}
